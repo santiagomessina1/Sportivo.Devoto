@@ -74,7 +74,7 @@ li a.active, li a:hover{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    width: 98vw;
+    width: 100%;
     flex-direction: column;
     text-align: center;
 }
@@ -85,6 +85,7 @@ li a.active, li a:hover{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 40px;
     font-weight: bold;
+    letter-spacing: 2px;
 }
 
 .centrar a{
@@ -208,10 +209,9 @@ ul {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 25px;
-    width: 100vw;
     text-transform: uppercase;
     padding: 20px;
-    
+    width: 100%;
 }
 
 .card{
@@ -266,7 +266,7 @@ ul {
     margin: 15px;
 }
 
-
+ 
 
 
 /* actividades */
@@ -282,7 +282,7 @@ ul {
     }
     
     .boxeo { grid-area: 1 / 1 / 2 / 2; }
-    .crossfit { grid-area: 1 / 2 / 2 / 3; }
+    .video { grid-area: 1 / 2 / 2 / 3; }
     .musculacion { grid-area: 1 / 3 / 2 / 4; }
 
 
@@ -312,12 +312,12 @@ ul {
         background-color: rgba(255, 0, 0, 0.363);
     }
     
-    .crossfit{
+    .video{
         width: 400px;
         height: 300px;
     }
 
-    .crossfit iframe{
+    .video iframe{
         width: 400px;
         height: 300px;
     }
@@ -434,155 +434,253 @@ ul {
 
 
 
-
-
-    
-
-    
-    
-@media (max-width: 952px){
-    .enlace{
-        padding-left: 20px;
-    }
-    nav ul li a{
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 858px){
-    .checkbtn{
-        display: block;
-    }
-    ul{
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background-color:rgb(36, 35, 35);
-        top: 80px;
-        left: -100%;
-        text-align: center;
-        transition: all .5s;
-    }
-    nav ul li{
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
-    }
-    nav ul li a{
-        font-size: 20px;
-    }
-    li a:hover, li a.active{
-        background: none;
-        color: red;
-    }
-    #check:checked ~ ul{
-        left:0;
-    }
-}
-
-@media only screen and (max-width: 768px){
-
-    .pie-pagina .grupo-1{
-        width: 90%;
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap:30px;
-        padding: 35px 0px;
-    }
-
-    .inicio_principal{
-        background-position: center;
-        background-size: cover;
-    }
-
-    .actividades {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, 1fr);
-        grid-column-gap: 0px;
-        grid-row-gap: 20px;
+    @media only screen and (mIN-width: 1024px){
+        /* NAVBAR */
+        nav ul li a{
+            font-size: 20px;
         }
+        .enlace{
+            font-size: 30px;
+        }
+
+        /* IMG INDEX */
+        .inicio_principal{
+            background-size: cover;
+        }
+
+        .centrar .centrar_h1{
+            font-size: 70px;
+        }
+
+        /* FOOTER */
+        .pie-pagina .grupo-1{
+            font-size: 20px;
+        }
+
+
+        /* ACTIVIDADES */
+    .boxeo, .video, .video iframe, .musculacion{
+        width: 600px;
+        height: 500px;
         
-        .boxeo { grid-area: 1 / 1 / 2 / 2; }
-        .crossfit { grid-area: 2 / 1 / 3 / 2; }
-        .musculacion { grid-area: 3 / 1 / 4 / 2; }
+    }
+    
+        .boxeo h1:hover, .musculacion h1:hover{
+            width: 600px;
+            height: 500px;
+            opacity: 1;
+            transition: 1s;
+            background-color: rgba(255, 0, 0, 0.363);
+        }
 
 
-        .boxeo{
-            width: 300px;
-            height: 300px;
-            background-image: url(../imagenes/boxeo.jpg);
+   
+
+    }
+    @media only screen and (max-width: 768px){
+        /* NAVBAR   */
+        .checkbtn{
+            display: block;
+        }
+        ul{
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background-color:rgb(36, 35, 35);
+            top: 80px;
+            left: -100%;
+            text-align: center;
+            transition: all .5s;
+        }
+        nav ul li{
+            display: block;
+            margin: 50px 0;
+            line-height: 30px;
+        }
+        nav ul li a{
+            font-size: 20px;
+        }
+        li a:hover, li a.active{
+            background: none;
+            color: red;
+        }
+        #check:checked ~ ul{
+            left:0;
+        }
+        .enlace{
+            padding: 20px;
+        }
+
+        /* IMG INDEX */
+        .inicio_principal{
+            background-size: cover;
+        }
+        /* ACTIVIDADES */
+        .actividades {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 20px;
+            }
+            
+    
+    
+            .boxeo{
+                grid-area: 1 / 1 / 2 / 2; 
+                width: 500px;
+                height: 300px;
+                background-image: url(../imagenes/boxeo.jpg);
+                background-position: center;
+                background-size: cover;
+            }
+            .boxeo h1{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 300px;
+                color: white;
+                text-transform: uppercase;
+                font-style: italic;
+                font-size: 30px;
+                font-family: 'Montserrat', sans-serif;
+                opacity: 1;
+                background-color: rgba(255, 0, 0, 0.464);
+            }
+            
+            
+            
+            
+            .video{
+                grid-area: 2 / 1 / 3 / 2;
+                width: 500px;
+           }
+            .video iframe{
+                width: 500px;
+                height: 300px;
+                margin-left: 0;
+            }
+            
+            .musculacion{
+                grid-area: 3 / 1 / 4 / 2; 
+                width: 500px;
+                height: 300px;
+                background-position: center;
+                background-size: cover;
+            }
+        
+            .musculacion h1{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 300px;
+                color: white;
+                text-transform: uppercase;
+                font-style: italic;
+                font-size: 30px;
+                font-family: 'Montserrat', sans-serif;
+                opacity: 1;
+                background-color: rgba(255, 0, 0, 0.464);
+            }
+    }
+    
+
+    @media only screen and (max-width: 500px) {
+
+
+        /* FOOTER */
+        .pie-pagina .grupo-1{
+            width: 90%;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap:30px;
+            padding: 35px 0px;
+        }
+
+        /* IMG INDEX */
+        .inicio_principal{
             background-position: center;
             background-size: cover;
         }
-        .boxeo h1{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 300px;
-            color: white;
-            text-transform: uppercase;
-            font-style: italic;
-            font-size: 30px;
-            font-family: 'Montserrat', sans-serif;
-            opacity: 1;
-            background-color: rgba(255, 0, 0, 0.464);
-        }
-        
-        
-        
-        .crossfit{
-            width: 300px;
-            height: 300px;
-            background-image: url(../imagenes/crossfit.jpg);
-            background-position: center;
-            background-size: cover;
-        }
-        .crossfit h1{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 300px;
-            color: white;
-            text-transform: uppercase;
-            font-style: italic;
-            font-size: 30px;
-            font-family: 'Montserrat', sans-serif;
-            opacity: 1;
-            background-color: rgba(255, 0, 0, 0.464);
-        }
-    
-        
-        .musculacion{
-            width: 300px;
-            height: 300px;
-            background-image: url(../imagenes/gym.jpeg);
-            background-position: center;
-            background-size: cover;
-        }
-    
-        .musculacion h1{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 300px;
-            color: white;
-            text-transform: uppercase;
-            font-style: italic;
-            font-size: 30px;
-            font-family: 'Montserrat', sans-serif;
-            opacity: 1;
-            background-color: rgba(255, 0, 0, 0.464);
-        }
-    
+
+
         .centrar_titulo{
             font-size: 20px;
         }
-        
 
-        .content{
-            padding: 5px;
-        }
+
+
+        /* ACTIVIDADES */
+
+        .actividades {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 20px;
+            }
+            
+    
+    
+            .boxeo{
+                grid-area: 1 / 1 / 2 / 2;
+                width: 300px;
+                height: 300px;
+                background-image: url(../imagenes/boxeo.jpg);
+                background-position: center;
+                background-size: cover;
+            }
+            .boxeo h1{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 300px;
+                color: white;
+                text-transform: uppercase;
+                font-style: italic;
+                font-size: 30px;
+                font-family: 'Montserrat', sans-serif;
+                opacity: 1;
+                background-color: rgba(255, 0, 0, 0.464);
+            }
+            
+            .video{
+                grid-area: 2 / 1 / 3 / 2;
+                width: 300px;
+           }
+            .video iframe{
+                width: 300px;
+                height: 300px;
+                margin-left: 0;
+            }
+            
+            .musculacion{
+                grid-area: 3 / 1 / 4 / 2;
+                width: 300px;
+                height: 300px;
+                background-image: url(../imagenes/gym.jpeg);
+                background-position: center;
+                background-size: cover;
+            }
         
+            .musculacion h1{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 300px;
+                color: white;
+                text-transform: uppercase;
+                font-style: italic;
+                font-size: 30px;
+                font-family: 'Montserrat', sans-serif;
+                opacity: 1;
+                background-color: rgba(255, 0, 0, 0.464);
+            }
+        
+    /* CONTACTO */
+    .content{
+        padding: 5px;
+    }
+
     .contact-wrapper {
         box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
         margin: 2px;
@@ -609,8 +707,5 @@ ul {
     .centrar_titulo{
         font-size: 15px;
     }
-}
 
-
-
-
+    }
