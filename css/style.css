@@ -244,10 +244,10 @@ ul {
     align-items: center;
     font-size: 20px;
     flex-wrap: wrap;
-    animation: animacion 2s ease 0s 1 normal forwards;
+    /* animation: animacion 2s ease 0s 1 normal forwards; */
 }
 
-@keyframes animacion {
+/* @keyframes animacion {
 	0%,
 	100% {
 		transform: translateY(0);
@@ -273,7 +273,7 @@ ul {
 	90% {
 		transform: translateY(-6.4px);
 	}
-}
+} */
 
 .card-title{
     color: white;
