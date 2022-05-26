@@ -339,6 +339,7 @@ ul {
         opacity: 1;
         transition: 1s;
         background-color: rgba(255, 0, 0, 0.363);
+        
     }
     
     .video{
@@ -377,6 +378,8 @@ ul {
         transition: 1.5s;
         background-color: rgba(255, 0, 0, 0.363);
     }
+
+    
 
 
 
@@ -478,7 +481,7 @@ ul {
 
       
 
-    @media only screen and (min-width: 1024px){
+    @media only screen and (min-width: 800px){
         /* NAVBAR */
         nav ul li a{
             font-size: 20px;
@@ -521,8 +524,8 @@ ul {
     }
     
         .boxeo h1:hover, .musculacion h1:hover{
-            width: 400px;
-            height: 300px;
+            width: 600px;
+            height: 400px;
             opacity: 1;
             transition: 1s;
             background-color: rgba(255, 0, 0, 0.363);
