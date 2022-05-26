@@ -256,6 +256,7 @@ ul {
     padding: 15px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 30px;
+    
 }
 
 .card2{
@@ -471,8 +472,34 @@ ul {
 
         .centrar .centrar_h1{
             font-size: 70px;
+            animation: myAnim 2s ease 0s 1 normal forwards;
         }
 
+        @keyframes myAnim {
+            0% {
+                transform: translate(0);
+            }
+        
+            20% {
+                transform: translate(-2px, 2px);
+            }
+        
+            40% {
+                transform: translate(-2px, -2px);
+            }
+        
+            60% {
+                transform: translate(2px, 2px);
+            }
+        
+            80% {
+                transform: translate(2px, -2px);
+            }
+        
+            100% {
+                transform: translate(0);
+            }
+        }
         /* FOOTER */
         .pie-pagina .grupo-1{
             font-size: 20px;
