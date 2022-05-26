@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+
+*{
+    background-color: #222222;
+}
+
+
+.wrapper h2{
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: white;
+  
+}
+
+#error_message{
+  margin-bottom: 20px;
+  background: red;
+  padding: 0px;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.5s ease;
+  
+}
+
+
+
+@keyframes myAnim {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 1;
+		transform: translateY(-45px);
+	}
+
+	24% {
+		opacity: 1;
+	}
+
+	40% {
+		animation-timing-function: ease-in;
+		transform: translateY(-24px);
+	}
+
+	65% {
+		animation-timing-function: ease-in;
+		transform: translateY(-12px);
+	}
+
+	82% {
+		animation-timing-function: ease-in;
+		transform: translateY(-6px);
+	}
+
+	93% {
+		animation-timing-function: ease-in;
+		transform: translateY(-4px);
+	}
+
+	25%,
+	55%,
+	75%,
+	87% {
+		animation-timing-function: ease-out;
+		transform: translateY(0px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+.content{
+        padding: 50px;
+    }
+    
+    .contact-wrapper {
+        box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+        color: white;
+        font-family: 'Quicksand', sans-serif;
+    }
+    
+    .contact-wrapper > * {
+        padding: 1em;
+        
+    }
+    
+    .contact-form {
+        background: #222222;
+    }
+    
+    .contact-form form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .contact-form form label {
+        display: block;
+    }
+    
+    .contact-form form p {
+        margin: 0;
+        padding: 1em;
+    }
+    
+    .contact-form form .block {
+        grid-column: 1 / 3;
+    }
+    
+    .contact-form form button,
+    .contact-form form input,
+    .contact-form form textarea {
+        width: 100%;
+        padding: .7em;
+        border: none;
+        background: none;
+        outline: 0;
+        color: #fff;
+        border-bottom: 1px solid #d63031;
+    }
+    
+    .contact-form form button {
+        background: #B70E21;
+        border: 0;
+        text-transform: uppercase;
+        padding: 1em;
+    }
+    
+    .contact-form form button:hover,
+    .contact-form form button:focus {
+        background: #d63031;
+        color: #fff;
+        transition: background-color 1s ease-out;
+        outline: 0;
+    }
+
+    
+    </style>
+
+
+<script>
+function validate(){
+  var name = document.getElementById("name").value;
+  console.log(name);
+  var subject = document.getElementById("subject").value;
+  var phone = document.getElementById("phone").value;
+  var email = document.getElementById("email").value;
+  var message = document.getElementById("message").value;
+  var error_message = document.getElementById("error_message");
+  
+  error_message.style.padding = "10px";
+  
+  var text;
+  if(name.length < 5){
+    text = "Please Enter valid Name";
+    error_message.innerHTML = text;
+    return false;
+  }
+  if(subject.length < 10){
+    text = "Please Enter Correct Subject";
+    error_message.innerHTML = text;
+    return false;
+  }
+  if(isNaN(phone) || phone.length != 10){
+    text = "Please Enter valid Phone Number";
+    error_message.innerHTML = text;
+    return false;
+  }
+  if(email.indexOf("@") == -1 || email.length < 6){
+    text = "Please Enter valid Email";
+    error_message.innerHTML = text;
+    return false;
+  }
+  if(message.length <= 140){
+    text = "Please Enter More Than 140 Characters";
+    error_message.innerHTML = text;
+    return false;
+  }
+  alert("Form Submitted Successfully!");
+  return true;
+}
+
+</script>
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <div class="content">
+        <div class="contact-wrapper animated bounceInUp">
+            <div class="contact-form">
+                <h2>¡Hola gracias por escribirnos, en menos de 24 horas nuestro equipo estara
+                    comunicandose con vos!</h2>
+                <div id="error_message">
+                   
+                </div>
+                <form action="" id="myform" onsubmit = "return validate();">
+                  <p class="input_field">
+                    <label>Nombre y Apellido</label>
+                      <input type="text" id="name">
+                  </p>
+                  <p class="input_field">
+                    <label>Asunto</label>
+                      <input type="text"  id="subject">
+                  </p>
+                  <p class="input_field">
+                    <label>Celular</label>
+                      <input type="tel"  id="phone">
+                  </p>
+                  <p class="input_field">
+                    <label>Mail</label>
+                      <input type="email"  id="email">
+                  </p>
+                  <p class=" block input_field">
+                    <label>Mensaje</label>
+                      <textarea id="message"></textarea>
+                  </p>
+                  <p class="btn block">
+                      <button> Enviar</button>
+                  </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
